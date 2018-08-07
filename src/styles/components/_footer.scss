@@ -1,0 +1,124 @@
+@import "../base/mixins";
+@import "../base/settings";
+@import "../base/layout";
+
+
+
+footer {
+  background: $black-background;
+}
+
+.footer__container {
+  display: flex;
+  width: 70%;
+  padding-top: 40px;
+  margin: 0 auto;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  li {
+    margin-top:10px;
+  }
+}
+
+.footer__column-header {
+  @include border-bottom;
+  font-size: 2rem;
+  color: $text-on-black;
+}
+
+.footer__link {
+  @include link($text-on-black);
+}
+
+.footer__social {
+  margin-top: 3rem;
+}
+
+.footer__social-link {
+  @include link($text-on-black);
+  font-size: 1.6rem;
+}
+
+.footer__nav {
+  @extend .footer__container;
+  padding-bottom: 20px;
+}
+
+.footer__link-nav {
+  @include link($text-on-black);
+  font-size: 2rem;
+  padding: 20px;
+}
+
+.footer__company {
+  @extend .footer__container;
+  color: $text-on-black;
+  justify-content: center;
+  font-weight: 200;
+  font-size: 2.5rem;
+  padding-top: 0;
+  p {
+    @include border-bottom;
+  }
+}
+
+
+
+@include range-breakpoint(840px, 1036px) {
+  .footer__container {
+    width: 100%;
+    padding: 4rem 2rem 0;
+  }
+  .footer__column, .footer__social {
+    padding: 0;
+  }
+  .footer__link-nav {
+    padding: .5rem;
+  }
+}
+
+@include range-breakpoint(0px, 1345px) {
+  .footer__nav {
+    width: 100%;
+    padding-left: 0;
+  }
+}
+
+@include range-breakpoint(460px, 840px) {
+  .footer_container{
+    justify-content: center;
+  }
+  .footer__column, .footer__social {
+    padding: 0;
+  }
+  .footer__nav {
+    font-size: $s-size;
+  }
+}
+
+@include range-breakpoint(0px, 1036px) {
+  .footer__column > li, .footer__social > li {
+    text-align: center;
+  }
+}
+
+@include range-breakpoint(0px, 460px) {
+  .footer_container{
+    justify-content: center;
+  }
+  .footer__column, .footer__social {
+    flex-basis: 100%;
+    padding: 0;
+  }
+  .footer__nav {
+    width: 100%;
+    padding-left: 0;
+  }
+  .footer__link-nav {
+    font-size: $s-size;
+  }
+  .footer__company > p {
+    font-size: $m-size;
+  }
+}
+

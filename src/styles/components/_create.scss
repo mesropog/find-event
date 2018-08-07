@@ -1,0 +1,34 @@
+@import "../base/settings";
+@import "../base/mixins";
+@import "../base/layout";
+
+.create-event-container {
+  @include display-flex(center);
+  margin: $big_section_margin;
+}
+
+.create-event__form {
+  width: 80%;
+  background: $offwhite-background;
+  padding: 2rem 5rem;
+}
+.create-event__fieldset {
+  margin-top: 1rem;
+}
+.create-event__button {
+  width: 100%;
+}
+.create-event__fieldset--pickers {
+  @include display-flex(space-between);
+}
+
+.date-time-set > .ant-calendar-picker {
+  padding: 0 .5rem;
+}
+
+@include range-breakpoint(0px, 660px) {
+  .date-time-set > span {
+    padding: .5rem 0!important;
+    width: 100%;
+  }
+}

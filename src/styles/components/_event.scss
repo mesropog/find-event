@@ -1,0 +1,50 @@
+@import "../base/settings";
+@import "../base/mixins";
+
+.event {
+  position: relative;
+  margin-left: 1%;
+  width: 32%;
+}
+
+.event__link {
+  @include display-flex(space-between);
+  height: 100%;
+  flex-direction: column;
+}
+
+.event__picture {
+  width: 100%;
+  max-height: 25vh;
+  object-fit: cover;
+}
+
+.event__price-type {
+  position: absolute;
+  top: 7%;
+  left: 7%;
+  background-color: $offwhite-background;
+  padding: 5px;
+  opacity: 1;
+  border-radius:2px;
+}
+
+.event__info-container {
+  @include display-flex(space-between, true);
+  color: $link-on-white;
+  flex-direction:column;
+}
+
+.event__title {
+  font-weight: 500;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+@include range-breakpoint(0px, 1046px) {
+  .event {width: 48%;}
+}
+
+@include range-breakpoint(0px, 550px){
+  .event {width: 100%;}
+}

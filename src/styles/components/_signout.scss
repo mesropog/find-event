@@ -1,0 +1,12 @@
+@import '../base/settings';
+@import '../base/mixins';
+
+.signout {
+  @include section(true, 5rem, 2rem, $justify:center);
+  flex-direction: column;
+  align-items: center;
+  min-height: 60vh;
+  h1, p {
+    color: $off-black;
+  }
+}

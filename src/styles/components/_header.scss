@@ -1,0 +1,63 @@
+@import "../base/mixins";
+@import "../base/settings";
+@import "../base/layout";
+@import url('https://fonts.googleapis.com/css?family=Shrikhand');
+
+#app > div > div > nav {
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  padding: 0 2rem;
+  border-left:$grey-border;
+}
+
+.nav-link {
+  @include link($link-on-white);
+  text-transform: uppercase;
+  padding: 2rem;
+  font-size: $l-size;
+}
+
+.navbar-brand {
+  @extend .nav-link;
+  font-family: 'Shrikhand', cursive;
+  font-weight: 700;
+  font-size: 2.5rem;
+  color: #850d11!important;
+  margin-right: 5rem;
+}
+
+#navbarColor03{
+  display:flex;
+  justify-content: flex-end;
+  margin-right: 0;
+  transition: opacity 700ms 0ms;
+}
+
+@include range-breakpoint(0px, 991px, false) {
+  .clicked {
+    height: 0px;
+    opacity: 0.01;
+    z-index: -100;
+    transition: opacity 700ms 0ms;
+  }
+  .nav-item {
+    border: none;
+    text-align: center;
+  }
+  #navbarColor03 {
+    justify-content: center;
+  }
+}
+
+@include type-breakpoint('mobile') {
+  .nav-link {
+    font-size: 1rem!important;
+    padding: .2rem;
+  }
+  .navbar-brand {
+    display: none;
+  }
+}

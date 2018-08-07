@@ -1,0 +1,42 @@
+@import "../base/mixins";
+@import "../base/settings";
+@import "../base/layout";
+
+.signin-page {
+  @include section(true, 2rem, 2rem);
+  justify-content:center;
+  width: calc(100% - 4rem);
+}
+
+.signin-page__form {
+  @include display-flex(center, true, column);
+  height: 50vh;
+  width: 30%;
+}
+
+.signin-page__form div div {
+  @include display-flex(center, true, column);
+}
+
+.signin-page__input {
+  height: 3rem;
+}
+
+.signin__button {
+  margin-top: 2rem!important;
+}
+
+@include range-breakpoint(630px, 1025px) {
+  .signin-page__form {
+    width: 70%;
+  }
+}
+
+@include range-breakpoint(0px, 630px) {
+  .signin-page__form {
+    width: 80%;
+  }
+  .signin-page {
+    padding: 0;
+  }
+}

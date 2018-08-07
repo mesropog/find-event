@@ -1,0 +1,54 @@
+@import "../base/settings";
+@import "../base/mixins";
+
+
+#filterForm {
+  @include display-flex();
+  flex-direction: column;
+  margin-top: 5rem;
+
+}
+
+.filterForm__text-input {
+  height: 3rem;
+  margin-bottom: 2rem;
+  font-size: $m-size;
+}
+
+// transitions on slide menu
+.filterForm__slide {
+  visibility:hidden;
+  height: 0;
+  opacity: 0;
+  margin-top: 1rem;
+  transition: height 300ms 300ms, visibility 300ms 300ms, opacity 300ms 0ms;
+}
+
+// always use transitions with visibility: hidden, not display: none.
+// The latter does not work in react
+.filterForm--active.filterForm__slide {
+  opacity: 1;
+  height: auto;
+  visibility: visible;
+  transition: height 300ms 0ms, opacity 300ms 300ms;
+}
+
+.filterForm__filter {
+  min-height: 3rem;
+  font-size: $l-size;
+  font-weight: 400;
+  padding: 2rem 3rem;
+  border: $grey-border;
+  cursor: pointer;
+}
+
+.filterForm__control {
+  font-size: 1.8rem;
+  padding: .5rem;
+  text-transform: capitalize;
+  transition: color 0.5s ease;
+  &:hover{
+    color: $black-background;
+    transition: color 0.5s ease;
+  }
+}

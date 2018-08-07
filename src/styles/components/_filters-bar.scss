@@ -1,0 +1,52 @@
+@import "../base/settings";
+@import "../base/mixins";
+
+
+.filter-bar {
+  @include shadow(3px, 3px, 5px, 1px, $grey);
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  height: 9rem;
+  padding: 2rem 1rem;
+  border: $dark-border;
+  border-radius: 3px;
+  background-color: $offwhite-background;
+  & > span {
+    @include display-flex(flex-start, true);
+    flex-grow: 0;
+  }
+}
+
+.filter-bar__filter-element {
+  margin-left: 2rem;
+  border: $grey-border;
+  padding: 1rem;
+  text-transform: capitalize;
+  transition:  0.5s ease-in-out;
+}
+
+.filter-bar__remove {
+  color: $error;
+  padding: .3rem;
+  cursor: pointer;
+}
+
+.filter-enter {
+  opacity: 0.01;
+}
+
+.filter-enter.filter-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.filter-leave {
+  opacity: 1;
+}
+
+.filter-leave.filter-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}
+
+

@@ -1,0 +1,125 @@
+@import "../base/settings";
+@import "../base/mixins";
+@import "../base/layout";
+
+
+
+.homepage {
+  position: relative;
+}
+
+.homepage__greeting {
+  @include section(true, 5rem, 0rem);
+  @include border-bottom($grey);
+  margin-top: 10rem;
+  justify-content: center;
+}
+
+.homepage__slider {
+  @include section(false, 0,0);
+  position: relative;
+  height: 90vh;
+  overflow: hidden;
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.homepage__searchform {
+  @include shadow(0, 3px, 10px, 5px, #d7d7d7);
+  @include display-flex(center);
+  position: absolute;
+  top: 30%;
+  left: 10%;
+  width: 80%;
+  padding: 10rem 5rem;
+  margin: 0 auto;
+  background: darken($offwhite-background, 3%);
+  border-radius: 10px;
+}
+
+.homepage__events > span {
+  @include section(true, 0, 0, $offwhite-background);
+  padding: 2% 9%;
+  min-height: 40vh;
+}
+
+@include range-breakpoint(800px, 1024px){
+  .homepage__searchform {
+    top: 30%;
+    padding: 3rem 2.5rem;
+  }
+  .homepage__slider {
+    height: auto;
+  }
+}
+
+@include range-breakpoint(500px, 800px){
+  .homepage__searchform {
+    top: 20%;
+    padding: 2rem 2.5rem;
+  }
+  .homepage__slider {
+    height: 50vh;
+  }
+}
+
+@include range-breakpoint(0px, 500px){
+  .homepage__slider {
+    height: 40vh;
+  }
+  .search-form {
+    input {
+      font-size: $m-size;
+    }
+  }
+}
+
+@include range-breakpoint(0px, 1200px) {
+  .homepage__events > span {
+    padding: 4rem 1rem;
+  }
+}
+
+@include range-breakpoint(500px, 900px){
+  .homepage__greeting {
+    margin-top: 5rem;
+  }
+}
+
+@include range-breakpoint(450px, 700px){
+  .homepage__greeting h1 {
+    font-size: $xl-size;
+  }
+  .homepage__greeting {
+    margin: 4rem 2rem;
+  }
+}
+
+@include range-breakpoint($max:450px){
+  .homepage__greeting {
+    margin: 2rem 1rem;
+    h1 {
+      font-size: $l-size;
+    }
+  }
+}
+
+@include range-breakpoint(350px, 500px){
+  .homepage__searchform {
+    top: 15%;
+    padding: 2rem 1rem;
+  }
+}
+
+@include range-breakpoint(0px, 350px){
+  .homepage__searchform {
+    top: 5%;
+    padding: 1rem 1rem;
+  }
+  .homepage__events > span {
+    padding: 1rem;
+  }
+}
+

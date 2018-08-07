@@ -1,0 +1,135 @@
+@import "../base/settings";
+@import "../base/mixins";
+@import "../base/layout";
+
+.event-page__background {
+  @include section(true, 0, 1rem, $offwhite-background, center);
+  width: 100%;
+}
+
+.event-page__info {
+  background: white;
+  margin: 5rem 0;
+  width: 80%;
+}
+
+.event-page__header {
+  @include display-flex($flex-wrap: false);
+  padding: 1rem;
+}
+
+.event-page__picture-holder {
+  flex: 1 0 60%;
+  img {
+    width: 100%;
+  }
+}
+
+.event-page__basic-info {
+  @include display-flex(start, false, column);
+  padding: 3rem 3rem 0 3rem;
+}
+
+
+.event-page__start {
+  padding-bottom: 1rem;
+  color: $grey;
+  font-size: $l-size;
+}
+
+.event__price-types {
+  margin-top: auto;
+  color: $off-black;
+  font-size: $l-size;
+}
+
+.event-page__item-name {
+  font-size: $xl-size;
+  color: $off-black;
+}
+
+.event-page__body {
+  @include display-flex();
+  margin-top: 5rem;
+  color: $grey;
+  justify-content: space-around;
+}
+
+.event-page__description {
+  flex: 0 0 60%;
+  padding: 0 2rem;
+  color: $off-black;
+  font-size: $m-size;
+  text-align: justify;
+  span {
+    font-weight: bold;
+  }
+}
+
+.event-page__venue {
+  flex: 0 0 30%;
+  color: $off-black;
+  @include display-flex($flex-direction: column)
+}
+
+.event-page__map {
+  margin-top: 5rem;
+}
+@include range-breakpoint($max:1000px) {
+  .event-page__description {
+    flex: 1 0 70%;
+  }
+  .event-page__venue {
+    flex: 0 0 30%;
+  }
+}
+
+@include range-breakpoint(760px, 1000px) {
+  .event-page__item-name {
+    font-size: $l-size;
+  }
+  .event-page__description {
+    flex: 1 0 70%;
+  }
+  .event-page__venue {
+    flex: 0 0 30%;
+  }
+}
+
+@include range-breakpoint(600px, 760px) {
+  .event-page__item-name, .event__price-types {
+    font-size: $m-size;
+  }
+  .event-page__info {
+    width: 90%;
+  }
+}
+
+@include range-breakpoint($max:600px) {
+  .event-page__item-name, .event__price-types {
+    font-size: $s-size;
+  }
+  .event-page__header {
+    flex-direction: column;
+  }
+  .event-page__body {
+    flex-direction: column;
+  }
+  .event-page__description {
+    flex: 1 1 100%;
+    font-size: $s-size;
+    word-wrap: break-word;
+  }
+  .event-page__venue {
+    flex: 1 1 100%;
+  }
+  .event-page__venue, .event-page__description {
+    padding: 1rem;
+  }
+  .event-page__body, .divider, .event-page__map {
+    margin-top: 1rem;
+  }
+  .event-page__info {
+    width: 100%;
+  }
+}

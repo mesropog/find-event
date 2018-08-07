@@ -1,0 +1,106 @@
+@import '../base/mixins';
+@import '../base/settings';
+@import '../base/layout';
+
+.browse-page {
+  @include display-flex($flex-wrap:false);
+}
+
+.browse-page__filter-form {
+  flex: 0 1 calc(23% - 5rem);
+  margin-right:5rem;
+}
+
+.browse-page__events {
+  flex: 0 1 77%;
+}
+
+.filter-fix {
+  height: 5rem;
+}
+
+.browse--page__events-container > span {
+  @include display-flex(flex-start, true);
+  width: 100%;
+}
+
+@include range-breakpoint(0px, 1063px) {
+  .browse-page {
+    justify-content: space-between;
+  }
+  .filterForm__filter {
+    font-size: $m-size;
+  }
+  .filterForm__control {
+    font-size: $s-size;
+  }
+}
+
+
+
+@include range-breakpoint(800px, 1063px) {
+  .browse-page__filter-form {
+    margin-right:.5rem;
+  }
+  .browse-page__filter-form {
+    flex: 0 1 21%;
+  }
+  .browse-page__events {
+    flex: 0 1 75%;
+  }
+}
+
+@include range-breakpoint(0px, 800px) {
+  .browse-page {
+    flex-direction: column;
+  }
+  .browse-page__filter-form {
+    flex-grow: 1;
+    margin: 0 0 1rem;
+  }
+
+  .browse-page__events {
+    flex-grow: 1;
+    margin: 0 0 1rem;
+  }
+}
+
+@include range-breakpoint(0px, 800px) {
+  .filter-bar {
+    margin: 1rem 0;
+  }
+}
+
+
+@include range-breakpoint(0px, 700px) {
+  .filter-fix {
+    height: 4rem;
+  }
+  .filter-bar {
+    min-height: 9rem;
+    height: auto;
+  }
+  .filter-bar__filter-element {
+    @include display-flex(center);
+    align-items: center;
+    position: relative;
+    width: calc(50% - 0.5rem);
+    margin-left: .5rem;
+    margin-top: .5rem;
+    & > span {
+      position: absolute;
+      right: 5%;
+      top: 25%;
+    }
+  }
+  & > span {
+    justify-content: space-between;
+  }
+}
+
+
+@include range-breakpoint(0px, 350px) {
+  .filter-bar__filter-element {
+    font-size:$s-size;
+  }
+}
